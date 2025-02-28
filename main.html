@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>روح رمضان</title>
+   <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="game/lantern.png">
+</head>
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Funnel+Display:wght@300..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Reem+Kufi+Ink&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    text-align: center;
+ }
+
+ /* body {
+    background-color: #fef6e4;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+ } */
+ body {
+background: linear-gradient(135deg, #fdf2e9, #f4c95d, #d77a61);
+background-size: 300% 300%;
+animation: gradientAnimation 10s ease infinite;
+color: #000000;
+font-family: "Reem Kufi", serif;
+font-size: 1.175rem;
+font-optical-sizing: auto;
+font-weight: weight;
+font-style: normal;  
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+ header {
+    background-color: #291305;
+    color: white;
+    padding: 1.5em 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ .background-video {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   object-fit: cover;
+   z-index: -1;
+}
+nav {
+   background: rgb(255, 239, 239);
+   padding: 1em;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+}
+
+nav ul li a {
+   color: rgb(26, 24, 24);
+   text-decoration: none;
+   font-size: 1.3em;
+   transition: all 0.3s linear;
+}
+
+nav ul li a:hover {
+   background-color: #7B6B43;
+   color: white;
+   padding: 0.5em;
+   border-radius: 5px;
+}
+ .hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+ }
+ .hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+ }
+ .hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+ }
+ .section {
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+   height: auto;
+   margin: 3em 1em;
+ }
+ .products {
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2em;
+    justify-content: space-around;
+    min-height: 200px; 
+    padding: 2rem;
+ }
+ .product {
+    background: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 450px;
+    margin-top: 2em;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+ .product:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+   .product img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+   }
+.product p ,strong{
+   margin: 1em;
+   font-family: 'Arial', sans-serif;
+   color: #051445;
+}
+  .store-text {
+    padding: 20px;
+    color: #fff;
+  }
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+button {
+   align-items: center;
+   padding: 10px 15px;
+   background-color: #ffffff;
+   outline: 3px #181717 solid;
+   font-size: 1.3rem;
+   outline-offset: -3px;
+   border-radius: 5px;
+   border: none;
+   color: rgb(12, 12, 12);
+   cursor: pointer;
+   transition: 400ms;
+ }
+ 
+ button text {
+   color: rgb(0, 0, 0);
+   font-weight: 700;
+   font-size: 1em;
+   transition: 400ms;
+ }
+ 
+ button svg path {
+   transition: 400ms;
+ }
+ 
+ button:hover {
+   background-color: black;
+   color: #ffffff;
+ }
+ 
+ button:hover .text {
+   color: #ffffff;
+ }
+ 
+ button:hover svg path {
+   fill: #ffffff;
+ }
+ .main_button:hover {
+   background-color: yellow;
+   transform: translateY(-3px);
+   color: #000000;
+ }
+ .tooltip {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ .tooltip .tooltiptext {
+   visibility: hidden;
+   opacity: 0;
+   width: 120px;
+   background-color: #fff;
+   color: #333;
+   text-align: center;
+   padding: 5px 8px;
+   border-radius: 6px;
+   
+  
+   position: absolute;
+   top: 50%; 
+   right: 10px;
+   transform: translateX(-50%);
+   z-index: 1;
+   
+  
+   transition: opacity 0.3s;
+ }
+ 
+ .tooltip:hover .tooltiptext {
+   visibility: visible;
+   opacity: 1;
+ }
+ footer {
+    background: #f3efef;
+    color: rgb(12, 12, 12);
+    padding: 1.5em;
+    margin-top: 20px;
+ }
+
+</style>
+<body>
+   <header>
+      <h1>روح رمضان</h1>
+      <p>عِش معنا أجواء رمضان المميزة</p>
+   </header>
+   <video autoplay loop muted playsinline class="background-video">
+      <source src="Main_page_data/Wahawy_Ya_Wahawy.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>  
+  <!-- styling for the log in icon -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <nav>
+   <ul>
+     <li><a href="calender/calender.html">التقويم</a></li>
+     <li><a href="Food_Recipes/Food_Recipes.html">الوصفات</a></li>
+     <li><a href="Doaa/اذكار.html">الدعاء</a></li>
+     <li><a href="game/game.html">الألعاب</a></li>
+     <li><a href="#store-section">المتجر</a></li>
+     <li class="tooltip">
+      <a href="Log_In/ramdan.html">
+        <i class="fas fa-user"></i>
+        <span class="tooltiptext">تسجيل الدخول</span>
+      </a>
+     </li>
+   </ul>
+ </nav>
+   
+   <div class="hero">
+      <h1>رمضان مبارك 🌙</h1>
+      <p>مرحبا بك في منصة تجمع بين الروحانية والمتعة خلال الشهر الكريم</p>
+      <button class="main_button" onclick="location.href='#featured-section';"> اكتشف المزيد</button>
+   </div>
+
+   <div class="section">
+      <h1 class="store-text">أقسام مميزة</h1>
+      <div class="products">
+         <div class="product" onclick="location.href='calender/calender.html';">
+            <img src="Main_page_data/calender.webp" alt="التقويم الرمضاني">
+            <h3>التقويم الرمضاني</h3>
+            <p>مواقيت دقيقة للسحور والإفطار.</p>
+         </div>
+         <div class="product" onclick="location.href='game/game.html';">
+            <img src="Main_page_data/game.jpg" alt="الألعاب">
+            <h3>الألعاب</h3>
+            <p>استمتع بألعاب تعليمية وترفيهية.</p>
+         </div>
+         <div class="product" onclick="location.href='Food_Recipes/Food_Recipes.html';">
+            <img src="Main_page_data/recipes.webp" alt="وصفات رمضانية">
+            <h3>وصفات رمضانية</h3>
+            <p>استمتع بأشهى الأطباق التقليدية والحديثة.</p>
+         </div>
+         <div class="product" onclick="location.href='Doaa/اذكار.html';">
+            <img src="Main_page_data/dua.jpg" alt="جدار الدعاء">
+            <h3>الدعاء</h3>
+            <p>شارك أدعيتك وتفاعل مع الآخرين.</p>
+         </div>
+      </div>
+   </div>
+
+   <div class="section" id="store-section">
+      <h1 style="color: white;">المتجر</h1>
+      <h2 style="color: white;">الأصناف</h2>
+      <div class="products" >
+         <div class="product" onclick="location.href='Store/prayer_mats.html';">
+            <img src="Store/Products/prayer mats.jpg" alt="منتج 1">
+            <h3>سجادة صلاة</h3>
+         </div>
+         <div class="product" onclick="location.href='Store/Quran_books.html';">
+            <img src="Store/Products/Quran_books.webp" alt="منتج 2">
+            <h3>كتب قرآن</h3>
+         </div>
+         <div class="product" onclick="location.href='Store/Masabeh.html';">
+            <img src="Store/Products/misbahas.webp" alt="منتج 3">
+            <h3>سبح</h3>
+         </div>
+      </div>
+
+   </div>
+
+   <footer>
+      <p>© 2025 - جميع الحقوق محفوظة لموقع روح رمضان</p>
+   </footer>
+</body>
+</html>
